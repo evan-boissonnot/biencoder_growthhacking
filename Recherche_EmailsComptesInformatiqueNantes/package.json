@@ -1,0 +1,22 @@
+{
+  "name": "recherche_emailscomptesinformatiquenantes",
+  "version": "1.0.0",
+  "description": "Recherche de tous les emails des entreprises informatiques de Nantes, premier test de Growth Hacking",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evan-boissonnot/biencoder_growthhacking.git"
+  },
+  "author": "evan boissonnot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evan-boissonnot/biencoder_growthhacking/issues"
+  },
+  "homepage": "https://github.com/evan-boissonnot/biencoder_growthhacking#readme",
+  "dependencies": {
+    "osmosis": "^1.1.4"
+  }
+}
