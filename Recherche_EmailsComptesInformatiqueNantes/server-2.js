@@ -8,11 +8,12 @@ function loadData(pageIndex, callback) { // on ajoute le callback
 
     osmosis
        .get(url + pageIndex.toString())
-       .find("#listResults")
-       .set({ 'related': ['h2 a.denomination-links'] }) // on recherche un tableau de a (et l'on va prendre son inner html)
+       .find('#listResults li.site-internet a.pj-link') 
+       .follow('@href')
+       .set({ 'related': 'h1' })
        .data(function(data) {
-           if(data.related.length > 0)  {
-              save(data);
+           if(data.length > 0)  {
+              //save(data);
 
               console.log(`Traitement de la page ${pageIndex} fini`);
 
@@ -20,9 +21,15 @@ function loadData(pageIndex, callback) { // on ajoute le callback
            }
 
            // s'il n'y a plus rien, on va pouvoir appeler le callback
-           if(data.related.length === 0) 
+           if(data.length === 0) 
                 callback(loader.companies);
-       });    
+       })
+        .debug(function(var1, var2) {
+            var ee=  "";
+        })
+        .error(function(var1, var2) {
+            var ee=  "";
+        });    
 }
 
 loadData(1, computeData); // on le passe à la fonction de chargement
@@ -33,3 +40,4 @@ function computeData(data) {
 
 
 }
+
